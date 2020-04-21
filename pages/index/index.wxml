@@ -1,0 +1,13 @@
+<map id="map" longitude="{{t_lng}}" latitude="{{t_lat}}" scale="15" markers="{{markers}}" class="map_map" style="width: 100%; height: 100vh;" bindcallouttap="callouttap">
+	
+	<!-- tab点击切换不同内容 -->
+	<cover-view class="xmwzB flex tfAlignC flexSb">
+		<view class="xmwzBLi {{index==xmwzB_index?'on':''}}" data-index='{{index}}' catchtap="xmwzB_click" wx:for='{{tabs}}' wx:key='index'>
+			<image class="img" src="{{index!=xmwzB_index?item.ico:item.ico_active}}"></image>
+			{{item.name}}
+		</view>
+	</cover-view>
+
+	<!-- 导航图标，点击跳转导航 -->
+	<cover-image class="navigation_btn" src="../../images/around/navigation_btn.png" bindtap="show_big_map" hidden="{{!navigation}}"></cover-image>
+</map>
